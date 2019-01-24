@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -17,6 +18,9 @@ describe('AppComponent', () => {
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
+    console.log(fixture.nativeElement.querySelector('h1').textContent);
+    console.log(fixture.debugElement.query(By.css('h1')));
+    console.log(fixture.debugElement.queryAll(By.css('h1')));
     expect(app).toBeTruthy();
   });
 
